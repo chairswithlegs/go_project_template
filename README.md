@@ -41,7 +41,7 @@ The test cases in this project are written in Go. To run them all, execute `go t
 
 Note that certain types of test cases, such as integration tests, may require docker to be running.
 
-## Frameworks
+## Dependencies
 The [testify](https://github.com/stretchr/testify) library is used for assertions and mocks. See `/internal/example_unit_test.go` for examples.
 
 The [Testcontainers](https://testcontainers.com/) framework should be used for external dependencies. See `/test/example_integration_test.go` for examples.
