@@ -25,11 +25,8 @@ func TestMongoDBIntegrationExample(t *testing.T) {
 	endpoint, err := container.Endpoint(ctx, "mongodb")
 	assert.NoErrorf(t, err, "error getting endpoint")
 
-	mongoClient, err := mongo.NewClient(options.Client().ApplyURI(endpoint))
+	mongoClient, err := mongo.Connect(ctx, options.Client().ApplyURI(endpoint))
 	assert.NoError(t, err, "error creating mongo client")
-
-	err = mongoClient.Connect(ctx)
-	assert.NoError(t, err, "error connecting to mongo")
 
 	err = mongoClient.Ping(ctx, nil)
 	assert.NoError(t, err, "error pinging mongo")
